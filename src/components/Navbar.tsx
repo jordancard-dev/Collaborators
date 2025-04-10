@@ -1,9 +1,8 @@
 
 import { Link, NavLink } from 'react-router-dom';
 
-type Props = {}
 
-const Navbar = (props: Props) => {
+const Navbar = () => {
   return (
     <nav>
     <ul>
