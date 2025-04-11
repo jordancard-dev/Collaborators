@@ -6,15 +6,14 @@ import { useWebSocket } from '../../context/WebSocketContext';
 interface UserParams extends Record<string, string | undefined> {
   id?: string;
 }
-
-type Props = {
-  onSubmit?: (message: string) => void;
-}
-
-const User = (props: Props) => {
+/**
+ * Users page that manages the user creation and joining process.
+ * It uses the WebSocket context to send messages to the server.
+ * @returns User component
+ */
+const User = () => {
   const { id } = useParams<UserParams>() || '';
   const navigate = useNavigate();
-  const [userId, setUserId] = useState<string | undefined>(id);
   const [userName, setUserName] = useState<string>();
   const { sendMessage } = useWebSocket();
 
